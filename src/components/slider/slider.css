@@ -1,0 +1,19 @@
+.sale{
+    text-align: center;
+    padding: 8px;
+    font-size: 1.7em;
+    color: white;
+    background-color: #88c8bc;
+    font-family: monospace;
+    margin: 5px 0 0 0;
+}
+.fontfam{
+    font-family: monospace;
+}
+.slider-btm{
+    font-size: 2.0em;
+}
+.shop-font{
+    font-weight: bolder;
+    font-size: 2.0em;
+}

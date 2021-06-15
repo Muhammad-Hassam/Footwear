@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: left;
+}
+.fontfam {
+  font-family: monospace;
+  font-size: 0.9em;
+}
+.txt-wht {
+  color: #fff;
+}
+.black {
+  background-color: #000;
+}
+.logo {
+  font-size: 2.4em;
+  color: #595959;
+  padding: 40px 50px 5px 30px;
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+}
+.item-display {
+  display: inline;
+}
+.nav_padding {
+  padding-right: 20px !important;
+  font-weight: bold;
+}
+.fam {
+  font-family: monospace;
+  font-size: 1.4rem;
+  background-color: rgb(238, 238, 238);
+}
+.sale {
+  text-align: center;
+  padding: 8px;
+  font-size: 1.7em;
+  color: white;
+  background-color: #88c8bc;
+  font-family: monospace;
+  margin: 5px 0 0 0;
+}
+.clr {
+  color: #000;
+}
