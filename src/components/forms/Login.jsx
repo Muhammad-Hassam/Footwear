@@ -6,11 +6,11 @@ import {
   Container,
   Row,
   Col,
-} from 'reactstrap';
-import { useForm } from 'react-hook-form';
-import { auth } from '../../config/firebase';
-import { useHistory } from 'react-router-dom';
-import Swal from 'sweetalert2';
+} from "reactstrap";
+import { useForm } from "react-hook-form";
+import { auth } from "../../config/firebase";
+import { useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Logins = (props) => {
   const { register, handleSubmit } = useForm();
@@ -19,9 +19,9 @@ const Logins = (props) => {
   const onSubmit = ({ email, password }, event) => {
     if (!email || !password) {
       Swal.fire({
-        title: 'Kindly fill all the fields',
-        type: 'warn',
-        text: '',
+        title: "Kindly fill all the fields",
+        type: "warn",
+        text: "",
         timer: 3000,
         showConfirmButton: false,
       });
@@ -30,39 +30,43 @@ const Logins = (props) => {
       auth
         .signInWithEmailAndPassword(email, password)
         .then(() => {
-          history.push('/');
+          if (auth.currentUser.email === "footwearadmin@gmail.com") {
+            history.push("/AdminDashboard");
+          } else {
+            history.push("/");
+          }
         })
         .catch((error) => alert(error.message));
     }
   };
   return (
-    <div className='form'>
+    <div className="form">
       <Container>
         <Row>
-          <Col xs='12' sm='12' md='12'>
-            <h1 className='text-center mt-5 mb-5 '>Login Form</h1>
+          <Col xs="12" sm="12" md="12">
+            <h1 className="text-center mt-5 mb-5 ">Login Form</h1>
           </Col>
         </Row>
         <Row>
-          <Col xs='12' sm='12' md='12'>
+          <Col xs="12" sm="12" md="12">
             <Form onSubmit={handleSubmit(onSubmit)}>
               <FormGroup>
-                <Label for='exampleEmail'>Email</Label>
+                <Label for="exampleEmail">Email</Label>
                 <input
-                  className='form-control'
-                  type='email'
-                  name='email'
-                  placeholder='Email'
+                  className="form-control"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
                   ref={register}
                 />
               </FormGroup>
               <FormGroup>
-                <Label for='examplePassword'>Password</Label>
+                <Label for="examplePassword">Password</Label>
                 <input
-                  className='form-control'
-                  type='password'
-                  name='password'
-                  placeholder='Password'
+                  className="form-control"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
                   ref={register}
                 />
               </FormGroup>
