@@ -1,6 +1,6 @@
-import { createContext, useState, useContext } from 'react';
-import { auth } from '../config/firebase';
-import { database } from '../config/firebase';
+import { createContext, useState, useContext } from "react";
+import { auth } from "../config/firebase";
+import { database } from "../config/firebase";
 
 export const cartContext = createContext(null);
 export const useCart = () => useContext(cartContext);
@@ -8,9 +8,10 @@ export const CartProvider = ({ children }) => {
   let [carts_array, setcarts_array] = useState({});
 
   const addCart = (product) => {
+    alert("Cart added Successfully");
     database
-      .ref('/ecommerce')
-      .child('carts/' + auth.currentUser.uid)
+      .ref("/ecommerce")
+      .child("carts/" + auth.currentUser.uid)
       .push({
         edition: product.edition,
         company: product.company,
